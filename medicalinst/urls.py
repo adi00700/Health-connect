@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     path('profile/',views.profile),
     path('dashboard/',views.dashboard),
-    path('works/',views.works)
+    path('works/',views.works),
+    path('suggest/',views.test)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

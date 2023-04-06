@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 pillow = "*"
+numpy = "*"
+pandas = "*"
+openpyxl = "*"
 
 [dev-packages]
 

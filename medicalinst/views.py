@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
+from main import MedRecommender
 # Create your views here.
 
 def profile(request):
@@ -10,3 +11,7 @@ def dashboard(request):
 
 def works(request):
     return render(request,'medicalinst/works.html')
+
+def test(request):
+    condition = str(request.POST['condition'])
+    return HttpResponse(MedRecommender(condition))
