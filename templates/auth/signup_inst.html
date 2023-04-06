@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+    <title> Patient Details </title>
+    <link rel="stylesheet" href={% static 'auth/signup_inst.css'%}>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="title">Registration</div>
+    <br>
+    <div class="content">
+      <form action="/auth/signup/institute" method="POST">{% csrf_token %}
+        <div class = "inst_type">
+          <input type="radio" name="institute" value="medical" id="bot-1">
+          <input type="radio" name="institute" value="insurance" id="bot-2">
+          
+          <span class="inst_title">Institution</span>
+          <div class="category2">
+            <label for="bot-1">
+            <span class="bot one"></span>
+            <span class="typeofinst">Medical Institute</span>
+          </label>
+          <label for="bot-2">
+            <span class="bot two"></span>
+            <span class="typeofinst">Insurance Provider</span>
+          </label>
+          
+          </div>
+        </div>
+
+        <div class = "inst_type">
+          <input type="radio" name="insttype" value="Private" id="bot-1" checked>
+          <input type="radio" name="insttype" value="Government" id="bot-2">
+          <input type="radio" name="insttype" value="SemiPrivate" id="bot-1">
+          <input type="radio" name="insttype" value="Individual" id="bot-2">
+          
+          <span class="inst_title">Type</span>
+          <div class="category2">
+            <label for="bot-1">
+            <span class="bot one"></span>
+            <span class="typeofinst">Private</span>
+          </label>
+          <label for="bot-2">
+            <span class="bot two"></span>
+            <span class="typeofinst">Government</span>
+          </label>
+
+          <label for="bot-1">
+            <span class="bot one"></span>
+            <span class="typeofinst">Semi-Government</span>
+          </label>
+          <label for="bot-2">
+            <span class="bot two"></span>
+            <span class="typeofinst">Individual</span>
+          </label>
+          
+          </div>
+        </div>
+
+
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Name</span>
+            <input name="name" type="text" placeholder="Enter your institute name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input name="email" type="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input name="password" type="text" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input name="cfpassword" type="text" placeholder="Confirm password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Telephone</span>
+            <input name="telephone" type="text" placeholder="Telephone Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Alternate Telephone</span>
+            <input name="alt_telephone" type="text" placeholder="Alternate Telephone" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Registration Number</span>
+            <input name="reg_no" type="text" placeholder="Registration Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Establishment Date</span>
+            <input name="establishment" type="text" placeholder="Establishment Date" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Verification Proof</span>
+            <input name="establishment" type="file" placeholder="Verification Proof" required>
+          </div>
+        </div>
+        <div class="button">
+          <button type="submit" >Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html> 

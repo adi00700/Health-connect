@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Institute Login</title>
+  <link rel="stylesheet" href={% static 'auth/login_inst.css' %}>
+   <!-- Font Awesome Cdn Link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Health Connect</h1>
+    <p>Welcome back!</p>
+    <form action="/auth/login/institute" method="POST">{% csrf_token %}
+      <input name="username" type="text" placeholder="Enter Username">
+      <input name="password" type="password" placeholder="Password">
+      <p class="recover">
+        <a href="#">Recover Password</a>
+      </p>
+    <closeform></closeform><button type="submit">Sign in</button></form>
+    
+    <p class="or">
+      ----- or continue with -----
+    </p>
+    <div class="icons">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-facebook"></i>
+    </div>
+    <div class="not-member">
+      Not a member? <a href="/auth/signuppage/institute">Register Now</a>
+    </div>
+  </div>
+</body>
+</html>

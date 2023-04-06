@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+    <title> Patient Details </title>
+    <link rel="stylesheet" href={% static 'auth/patient_details.css'%}>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <br>
+      <p>Your Health ID is {{pageno}}. Please keep it safe with you and fill the remaining details.</p>
+      <form action="/auth/signup/patientdetails" method="POST">{% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Blood Group</span>
+            <input name="blood" type="text" placeholder="Enter your blood group" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input name="age" type="number" placeholder="Enter your age" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Postal Address</span>
+            <input name="perm_address" type="text" placeholder="Enter your address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone</span>
+            <input name="phone" type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Emergency Contact</span>
+            <input name="emg_contact" type="text" placeholder="Enter emergency number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Profile Photo</span>
+            <input name="profileimg" type="file" id = "xyz" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="Male" checked>
+          <input type="radio" name="gender" id="dot-2" value="Female">
+          <input type="radio" name="gender" id="dot-3" value="Other">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <button type="submit" >Register</button>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html> 

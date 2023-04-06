@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Sign Up</title>
+  <link rel="stylesheet" href={% static 'auth/signup_patient.css' %}>
+   <!-- Font Awesome Cdn Link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>SIGN UP</h1>
+    <br>
+    
+    <form action="/auth/signup/patient" method="POST">{% csrf_token %}
+      <input name="name" type="text" placeholder="Name" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <input name="password" type="text" placeholder="Password" required>
+      <input name="cfpassword" type="text" placeholder="Confirm Password" required>
+
+      
+    <closeform></closeform>
+    <button type = "submit">Sign Up</button>
+    </form>
+    
+    <p class="or">
+      ----- or continue with -----
+    </p>
+    <div class="icons">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-github"></i>
+      <i class="fab fa-facebook"></i>
+    </div>
+    <div class="not-member">
+      Already a member? <a href="/auth/loginpage/patient"> Sign In.</a>
+    </div>
+  </div>
+</body>
+</html>
