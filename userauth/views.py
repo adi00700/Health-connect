@@ -168,7 +168,7 @@ def instsignup(request):
         
 
         messages.success(request,"User Account Created Successfully.")
-        return HttpResponse("Your Unique Username/Registration ID is " + str(postnum))
+        return HttpResponse("Your Unique Username/Registration ID is " + str(postnum) + "<br><a href='/'>Return Home</a>")
     else:
         return HttpResponse("Creating new user account failed !")
 

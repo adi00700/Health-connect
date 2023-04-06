@@ -26,7 +26,12 @@
                     <li class="nav-item"><a class="nav-link" href="/discuss">Discuss</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                 </ul>
-                {% if user.is_authenticated %}<a class="navbar-brand d-flex align-items-center" href="/profile"><img src="{% static 'images/cont.jpeg' %}" width="40" height="40"></a><a class="btn btn-primary shadow" role="button" href="/auth/logout/user">Log Out</a>{% else %}<a class="btn btn-primary shadow" role="button" href="/auth/loginpage/patient">Log In</a>{% endif %}
+                {% if user.is_authenticated %}
+                <a class="navbar-brand d-flex align-items-center" href="/profile"><img src="{% static 'images/cont.jpeg' %}" width="40" height="40"></a><a class="btn btn-primary shadow" role="button" href="/auth/logout/user">Log Out</a>
+                {% else %}
+                <a class="btn btn-primary shadow" role="button" href="/auth/loginpage/patient">Log In</a>&nbsp;
+                <a class="btn btn-primary shadow" role="button" href="/auth/loginpage/institute">Institute Login</a>
+                {% endif %}
             </div>
         </div>
     </nav>
